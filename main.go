@@ -23,9 +23,9 @@ type (
 )
 func main() {
 	r := gin.Default()
-	api := "326B4B4F5067427933384F4365565962536B79363751785949657054464E387A3833443645414F4D4E6F773D"
+	api := kavenegar.New(os.Getenv("KAVE_API_KEY"))
 	sender := ""
-	receptor := "+989128691624"}
+	receptor := []string{os.Getenv("RECIPIENT")}
 
 	r.POST("/alert/:region/:severity", func(c *gin.Context) {
 
